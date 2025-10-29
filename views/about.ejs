@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title><%=shopName%></title>
+        <link rel="stylesheet" href="/css/styles.css">  
+    </head>
+    <body>
+        <h1>About The <%=shopName%></h1>
+        <p>We sell all sorts of drinks</p>
+
+        <h2>Here are our shops</h2>
+        <% if (shops && shops.length > 0) { %>
+            <ul>
+              <% shops.forEach(function(s){ %>
+                <li>
+                  <strong><%= s.location %></strong><br>
+                  Manager: <%= s.manager %><br>
+                  Address: <%= s.address %>
+                </li>
+              <% }); %>
+            </ul>
+          <% } else { %>
+            <p>No shop locations yet.</p>
+          <% } %>
+    </body>
+</html>
